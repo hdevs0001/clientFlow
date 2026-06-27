@@ -2,7 +2,7 @@
 
 import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
-import { TaskStatus } from "@/app/generated/prisma/enums";
+import { TaskStatus } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { taskSchema } from "@/app/schema/taskSchema";
 
