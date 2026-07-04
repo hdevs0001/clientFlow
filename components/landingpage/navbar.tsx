@@ -13,22 +13,29 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 bg-[#131314]/80 backdrop-blur-xl border-b border-white/10">
-        <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#131314]/80 backdrop-blur-xl border-b border-white/10 overflow-x-hidden">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-primary">
+          <Link
+            href="/"
+            className="flex items-center gap-2 shrink-0"
+          >
             <Image
               src="/image.png"
-              width={17}
-              height={17}
+              width={20}
+              height={20}
               alt="ClientFlow Logo"
+              className="shrink-0"
             />
-            <span className="text-[24px] font-bold text-on-surface tracking-tight">
+
+            <span className="text-2xl font-bold text-on-surface whitespace-nowrap">
               ClientFlow
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <nav
             className="hidden md:flex items-center gap-8"
             style={{
@@ -93,9 +100,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-white"
+            className="md:hidden flex items-center justify-center w-10 h-10 shrink-0"
           >
-            <span className="material-symbols-outlined text-3xl">menu</span>
+            <span className="material-symbols-outlined text-3xl text-white">
+              menu
+            </span>
           </button>
         </div>
       </header>
@@ -103,42 +112,54 @@ export default function Navbar() {
       {/* Overlay */}
       <div
         onClick={() => setMenuOpen(false)}
-        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed inset-0 bg-black/60 z-40 transition-opacity duration-300 md:hidden ${
+          menuOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible"
         }`}
       />
 
-      {/* Mobile Sidebar */}
+      {/* Sidebar */}
       <aside
-        className={`fixed top-0 right-0 h-screen w-72 bg-[#131314] border-l border-white/10 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-y-0 right-0 w-[85vw] max-w-[320px] bg-[#131314] border-l border-white/10 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+          menuOpen
+            ? "translate-x-0"
+            : "translate-x-full"
         }`}
       >
-        {/* Sidebar Header */}
+        {/* Header */}
         <div className="flex items-center justify-between p-5 border-b border-white/10">
+
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 shrink-0"
           >
             <Image
               src="/image.png"
-              width={17}
-              height={17}
+              width={20}
+              height={20}
               alt="ClientFlow Logo"
             />
-            <span className="text-xl font-bold text-white">ClientFlow</span>
+
+            <span className="text-xl font-bold whitespace-nowrap text-white">
+              ClientFlow
+            </span>
           </Link>
 
-          <button onClick={() => setMenuOpen(false)}>
-            <span className="material-symbols-outlined text-white text-3xl">
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="w-10 h-10 flex items-center justify-center"
+          >
+            <span className="material-symbols-outlined text-3xl text-white">
               close
             </span>
           </button>
         </div>
 
-        {/* Sidebar Links */}
-        <nav className="flex flex-col p-6 gap-6 text-lg">
+        {/* Links */}
+        <nav className="flex flex-col gap-6 p-6 text-lg">
+
           <Link
             href="/#features"
             onClick={() => setMenuOpen(false)}
@@ -176,7 +197,7 @@ export default function Navbar() {
               <Link
                 href="/dashboard"
                 onClick={() => setMenuOpen(false)}
-                className="block text-center bg-primarys text-on-primary py-3 rounded-lg font-semibold glow-button"
+                className="block rounded-lg bg-primarys py-3 text-center font-semibold text-on-primary glow-button"
               >
                 Dashboard
               </Link>
@@ -184,7 +205,7 @@ export default function Navbar() {
               <Link
                 href="/login"
                 onClick={() => setMenuOpen(false)}
-                className="block text-center bg-primarys text-on-primary py-3 rounded-lg font-semibold glow-button"
+                className="block rounded-lg bg-primarys py-3 text-center font-semibold text-on-primary glow-button"
               >
                 Login
               </Link>
