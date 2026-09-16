@@ -696,11 +696,9 @@ https://github.com/hdevs0001/clientFlow
 
 ---
 
-# 📜 License
 
-Add the project's license information here if a license is included in the repository.
 
----
+
 
 ## ⭐ Project Summary
 
