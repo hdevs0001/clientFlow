@@ -618,35 +618,6 @@ Possible future improvements include:
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots of the application here.
-
-### Dashboard
-
-```text
-<!-- Add dashboard screenshot here -->
-```
-
-### Client Management
-
-```text
-<!-- Add client management screenshot here -->
-```
-
-### Project Management
-
-```text
-<!-- Add project screenshot here -->
-```
-
-### Reports
-
-```text
-<!-- Add reports screenshot here -->
-```
-
----
 
 # 🤝 Contributing
 
